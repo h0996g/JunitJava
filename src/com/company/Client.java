@@ -24,6 +24,7 @@ public class Client {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.profilePhotoPath = profilePhotoPath;
+        rOrder=new HashSet<>();
     }
     public int getId() {
         return id;
@@ -86,7 +87,7 @@ public class Client {
     //relation(one to many ) Client with Order
     private Set<Order> rOrder;
     public Client(){
-        rOrder=new HashSet<Order>();
+        rOrder=new HashSet<>();
     }
     public Set<Order> getOrder(){
         return rOrder;

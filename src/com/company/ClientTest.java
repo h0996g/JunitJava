@@ -83,16 +83,11 @@ class ClientTest {
         orderArrayList.add(o3);
         orderArrayList.add(o4);
         orderArrayList.add(o5);
-//        o1.addAddress(a1);
-//        o2.addAddress(a2);
-//c1.addOrder(o1);
-//        o1.addClient(c1);
-//        o2.addClient(c2);
-//c1.addOrder(o3);
-//        c1.addOrder(o1);
-//        c1.addOrder(o2);
-//        o1.addClient(c1);
-//        o2.addClient(c1);
+
+
+c1.addOrder(o1);
+c1.addOrder(o5);
+c2.addOrder(o2);
 
     }
 
@@ -103,8 +98,11 @@ class ClientTest {
     public void testCountry(){
         assertNotNull(o1);
         assertNotNull(o1.getAddress().getCountry());
-        System.out.println(o1.getClient());
+        System.out.println(c1.getOrder().toArray());
+        System.out.println(c2.getOrder());
+
         assertEquals("alg", o1.getAddress().getCountry());
+
     }
 //    @Test
 //    public void testTouristVisitNumber(){
