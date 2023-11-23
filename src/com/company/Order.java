@@ -1,5 +1,4 @@
 package com.company;
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,7 +6,7 @@ import java.util.Set;
 public class Order {
     protected int id;
     protected   enum Status{Draft,confirmed,delivered;}
-protected String review;
+    protected String review;
     protected int evaluation;
     protected Date createdAt;
     protected Date confirmedAt;
@@ -88,7 +87,6 @@ protected String review;
         this.review = review;
 //        this.evaluation = evaluation;
         setEvaluation(evaluation);
-
         this.createdAt = createdAt;
         this.confirmedAt = confirmedAt;
         this.deliveredAt = deliveredAt;
@@ -107,15 +105,14 @@ protected String review;
             client.addOrder(this);
         }
 }
-
     public void removeClient(){
         getClient().removeOrder(this);
         setClient(null);
     }
-public Client getClient(){
+    public Client getClient(){
         return rClient;
 }
-public void setClient(Client client){
+    public void setClient(Client client){
         this.rClient=client;
 }
 

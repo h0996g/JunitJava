@@ -11,19 +11,15 @@ public class DeliveryGuy {
     protected String firstName;
     protected String lastName;
     protected String email;
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     protected String password;
     protected String phoneNumber;
     protected Status status;
-
     public String getFirstName() {
         return firstName;
     }
@@ -71,9 +67,7 @@ public class DeliveryGuy {
     public void setStatus(Status status) {
         this.status = status;
     }
-
-
-
+    
     public DeliveryGuy(int id,String firstName, String lastName, String email, String password, String phoneNumber, Status status) {
       this.id=id;
         this.firstName = firstName;
