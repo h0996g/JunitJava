@@ -93,6 +93,7 @@ protected String review;
         this.confirmedAt = confirmedAt;
         this.deliveredAt = deliveredAt;
         this.status = status;
+        rOrderLine = new HashSet<OrderLine>();
         addAddress(address);
     }
     //---------relation(one to many ) Client with Order---------------

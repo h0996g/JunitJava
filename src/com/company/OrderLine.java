@@ -31,7 +31,10 @@ public class OrderLine {
 
     public void addOrder(Order order){
         if(!order.getOrderLine().contains(this)){
-            if(getOrder() != null) removeOrder();
+            if(getOrder() != null)
+            {
+                removeOrder();
+            }
             setOrder(order);
             order.addOrderLine(this);
         }

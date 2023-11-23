@@ -46,6 +46,7 @@ public class Item {
         this.name = name;
         this.description = description;
         this.price = price;
+        rOrderLine = new HashSet<OrderLine>();
     }
 
 
@@ -55,7 +56,10 @@ public class Item {
     public Item(){ rOrderLine = new HashSet<OrderLine>();}
     public void addOrderLine(OrderLine orderLine){
         if( !getOrderLine().contains(orderLine) ){
-            if(orderLine.getItem() != null) orderLine.removeItem();
+            if(orderLine.getItem() != null)
+            {
+                orderLine.removeItem();
+            }
             orderLine.setItem(this);
             getOrderLine().add(orderLine);
         }

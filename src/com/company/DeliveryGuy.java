@@ -82,6 +82,7 @@ public class DeliveryGuy {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.status = status;
+        rOrder = new HashSet<Order>();
     }
     //-----------------------relation(one to many ) DeliveryGuy with Order-------------------------------
     private Set<Order> rOrder;
