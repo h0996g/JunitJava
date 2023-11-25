@@ -82,7 +82,7 @@ public class Order {
         this.status = status;
     }
 
-    public Order(int id,String review, int evaluation, Date createdAt, Date confirmedAt, Date deliveredAt, Status status,Address address) {
+    public Order(int id,String review, int evaluation, Date createdAt, Date confirmedAt, Date deliveredAt, Status status,Address addressDes,Address addressSrc) {
         this.id=id;
         this.review = review;
 //        this.evaluation = evaluation;
@@ -92,7 +92,9 @@ public class Order {
         this.deliveredAt = deliveredAt;
         this.status = status;
         rOrderLine = new HashSet<OrderLine>();
-        addAddress(address);
+        addAddressDes(addressDes);
+        addAddressSrc(addressSrc);
+
     }
     //---------relation(one to many ) Client with Order---------------
     private Client rClient;
@@ -152,11 +154,16 @@ public class Order {
     public DeliveryGuy getDeliveryGuy(){ return rDeliveryGuy; }
     public void setDeliveryGuy(DeliveryGuy deliveryGuy){ this.rDeliveryGuy = deliveryGuy; }
 
-    //----------------------relation(one to one unidirectionnelle (compostion)  ) Order with Address--------------------
-    private Address rAddress;
-    public void addAddress(Address address) { setAddress(address); }
-    public Address getAddress() { return rAddress; }
-    public void setAddress(Address address) { if (address != null) this.rAddress = address; }
+    //----------------------relation(one to one unidirectionnelle (compostion)  ) Order with Address Des--------------------
+    private Address rAddressDes;
+    public void addAddressDes(Address address) { setAddressDes(address); }
+    public Address getAddressDes() { return rAddressDes; }
+    public void setAddressDes(Address address) { if (address != null) this.rAddressDes = address; }
 
+    //----------------------relation(one to one unidirectionnelle (compostion)  ) Order with Address  Src--------------------
+    private Address rAddressSrc;
+    public void addAddressSrc(Address address) { setAddressSrc(address); }
+    public Address getAddressSrc() { return rAddressSrc; }
+    public void setAddressSrc(Address address) { if (address != null) this.rAddressSrc = address; }
 
 }

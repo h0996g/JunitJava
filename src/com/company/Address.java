@@ -4,6 +4,10 @@ public class Address {
     protected int id;
     protected String street;
     protected String city;
+    protected String postalCode;
+    protected String country;
+    protected double longitude;
+    protected double latitude;
 
     public int getId() {
         return id;
@@ -12,9 +16,6 @@ public class Address {
     public void setId(int id) {
         this.id = id;
     }
-
-    protected String postalCode;
-    protected String country;
 
     public String getStreet() {
         return street;
@@ -51,20 +52,22 @@ public class Address {
 
     //----------------------relation(one to one unidirectionnelle (compostion)  ) Address with GeoPosition--------------------
 private  GeoPosition rGeoPosition;
-    public Address(int id,String street, String city, String postalCode, String country,GeoPosition geoPosition) {
+    public Address(int id,String street, String city, String postalCode, String country,double latitude,double longitude) {
         this.id=id;
         this.street = street;
         this.city = city;
         this.postalCode = postalCode;
         this.country = country;
-        addGeoPosition(geoPosition);
+        this.latitude=latitude;
+        this.longitude=longitude;
+//        addGeoPosition(geoPosition);
     }
 
-    public void addGeoPosition(GeoPosition geoPosition) { setGeoPosition(geoPosition);
-
-    }
-    public GeoPosition getGeoPosition() { return rGeoPosition; }
-    public void setGeoPosition(GeoPosition geoPosition) { if (geoPosition != null) this.rGeoPosition = geoPosition; }
+//    public void addGeoPosition(GeoPosition geoPosition) { setGeoPosition(geoPosition);
+//
+//    }
+//    public GeoPosition getGeoPosition() { return rGeoPosition; }
+//    public void setGeoPosition(GeoPosition geoPosition) { if (geoPosition != null) this.rGeoPosition = geoPosition; }
 
 
 

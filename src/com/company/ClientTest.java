@@ -11,8 +11,9 @@ import static com.company.Order.Status.confirmed;
 import static org.junit.jupiter.api.Assertions.*;
 class ClientTest {
     Client c1, c2, c3, c4;
-    Address a1,a2,a3,a4,a5;
-    GeoPosition p1,p2,p3,p4;
+    Address a1Des, a2Des, a3Des, a4Des, a5Des;
+    Address a1Src, a2Src, a3Src, a4Src, a5Src;
+//    GeoPosition p1,p2,p3,p4;
     Order o1 , o2 , o3 , o4,o5  ;
     OrderLine ol1,ol2,ol3,ol4,ol5;
     DeliveryGuy d1,d2,d3,d4,d5;
@@ -28,7 +29,7 @@ class ClientTest {
     public void setUp() throws Exception {
         clientArrayList=new ArrayList<>();
         orderArrayList=new ArrayList<>();
-        geoPositionArrayList=new ArrayList<>();
+//        geoPositionArrayList=new ArrayList<>();
         addressArrayList=new ArrayList<>();
         deliveryGuyArrayList=new ArrayList<>();
         itemArrayList=new ArrayList<>();
@@ -36,26 +37,40 @@ class ClientTest {
 
         //add GeoPosition
 
-        p1=new GeoPosition(1,20.3,20.4);
-        p2=new GeoPosition(2,22.3,24.6);
-        p3=new GeoPosition(3,13.3,9.2);
-        p4=new GeoPosition(4,5,50.7);
-        geoPositionArrayList.add(p1);
-        geoPositionArrayList.add(p2);
-        geoPositionArrayList.add(p3);
-        geoPositionArrayList.add(p4);
+//        p1=new GeoPosition(1,20.3,20.4);
+//        p2=new GeoPosition(2,22.3,24.6);
+//        p3=new GeoPosition(3,13.3,9.2);
+//        p4=new GeoPosition(4,5,50.7);
+//        geoPositionArrayList.add(p1);
+//        geoPositionArrayList.add(p2);
+//        geoPositionArrayList.add(p3);
+//        geoPositionArrayList.add(p4);
 
         //add Address
 
-        a1=new Address(1,"Zwghi","Constantine","25001","alg",p1);
-        a2=new Address(2,"bousof","oran","25003","alg",p2);
-        a3=new Address(3,"boujnan","mila","25004","alg",p3);
-        a4=new Address(4,"Nouv","telemsan","25007","alg",p4);
-        a5=new Address(5,"jami3a","mostghanem","2001","dz",p4);addressArrayList.add(a1);
-        addressArrayList.add(a2);
-        addressArrayList.add(a3);
-        addressArrayList.add(a4);
-        addressArrayList.add(a5);
+        a1Des =new Address(1,"Zwghi","Constantine","25001","alg",20.3,20.4);
+        a2Des =new Address(2,"bousof","oran","25003","alg",30,40);
+        a3Des =new Address(3,"boujnan","mila","25004","alg",52,42);
+        a4Des =new Address(4,"Nouv","telemsan","25007","alg",13,15);
+        a5Des =new Address(5,"blida","algeria","124150","alg",32,34);
+        addressArrayList.add(a1Des);
+
+
+        a1Src =new Address(1,"src1","Blida","25001","dz",11.2,42.2);
+        a2Src =new Address(2,"src2","Anaba","25005","dz",30.1,33);
+        a3Src =new Address(3,"src3","jijle","25043","dz",11.2,13);
+        a4Src =new Address(4,"src4","alg","25023","dz",19,13);
+        a5Src =new Address(5,"src5","tindof","2001","dz",33,23.2);
+        addressArrayList.add(a1Des);
+        addressArrayList.add(a2Des);
+        addressArrayList.add(a3Des);
+        addressArrayList.add(a4Des);
+        addressArrayList.add(a5Des);
+        addressArrayList.add(a1Src);
+        addressArrayList.add(a2Src);
+        addressArrayList.add(a3Src);
+        addressArrayList.add(a4Src);
+        addressArrayList.add(a5Src);
 
         //add Clients
 
@@ -81,11 +96,11 @@ class ClientTest {
 
 //        add Orders
 
-        o1=new Order(1,"5",5,new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft,a1);
-        o2=new Order(2,"good",4,new GregorianCalendar(2004, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft,a2);
-        o3=new Order(3,"nice",4,new GregorianCalendar(2003, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft,a3);
-        o4=new Order(4,"b1",4,new GregorianCalendar(2007, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft,a4);
-        o5=new Order(5,"b1",5,new GregorianCalendar(2007, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),confirmed,a4);
+        o1=new Order(1,"5",5,new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft, a1Des,a1Src);
+        o2=new Order(2,"good",4,new GregorianCalendar(2004, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft, a2Des,a2Src);
+        o3=new Order(3,"nice",4,new GregorianCalendar(2003, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft, a3Des,a3Src);
+        o4=new Order(4,"b1",4,new GregorianCalendar(2007, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),Draft, a4Des,a4Src);
+        o5=new Order(5,"b1",5,new GregorianCalendar(2007, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2005, Calendar.JUNE, 8).getTime(),new GregorianCalendar(2000, Calendar.JUNE, 8).getTime(),confirmed, a4Des,a5Src);
         orderArrayList.add(o1);
         orderArrayList.add(o2);
         orderArrayList.add(o3);
@@ -163,10 +178,12 @@ class ClientTest {
     @Test
     public void testCountry(){
         assertNotNull(o1);
-        assertNotNull(o1.getAddress().getCountry());
+        assertNotNull(o1.getAddressDes().getCountry());
         System.out.println(c1.getOrder().size());
 //   c2.getOrder().forEach(order -> {System.out.println(order.review);});
-        assertEquals("alg", o1.getAddress().getCountry());
+        assertEquals("alg", o1.getAddressDes().getCountry());
+        assertEquals("dz", o1.getAddressSrc().getCountry());
+
     }
     @Test
     public void testNumberOfClientOrder(){
@@ -193,9 +210,9 @@ class ClientTest {
     @Test
     public void testChangeAddressOrder(){
         assertNotNull(o1);
-        assertEquals("Constantine", o1.getAddress().getCity());
-        o1.addAddress(a2);
-        assertEquals("oran", o1.getAddress().getCity());
+        assertEquals("Constantine", o1.getAddressDes().getCity());
+        o1.addAddressDes(a2Des);
+        assertEquals("oran", o1.getAddressDes().getCity());
         System.out.println(o1.getOrderLine().size());
     }
     @Test

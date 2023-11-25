@@ -3,20 +3,15 @@ package com.company;
 public class Agent {
     protected int id;
     protected String firstName;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     protected String lastName;
     protected String email;
     protected String password;
     protected String phoneNumber;
     protected String ipAddress;
+
+
+
+
 
     public Agent(int id,String firstName, String lastName, String email, String password, String phoneNumber, String ipAddress) {
        this.id=id;
@@ -26,6 +21,14 @@ public class Agent {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.ipAddress = ipAddress;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
