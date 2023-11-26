@@ -13,7 +13,6 @@ class ClientTest {
     Client c1, c2, c3, c4;
     Address a1Des, a2Des, a3Des, a4Des, a5Des;
     Address a1Src, a2Src, a3Src, a4Src, a5Src;
-//    GeoPosition p1,p2,p3,p4;
     Order o1 , o2 , o3 , o4,o5  ;
     OrderLine ol1,ol2,ol3,ol4,ol5;
     DeliveryGuy d1,d2,d3,d4,d5;
@@ -21,7 +20,6 @@ class ClientTest {
     ArrayList<Client> clientArrayList;
     ArrayList<DeliveryGuy> deliveryGuyArrayList;
     ArrayList<Order> orderArrayList;
-    ArrayList<GeoPosition> geoPositionArrayList;
     ArrayList<Address>addressArrayList;
     ArrayList<Item>itemArrayList;
     ArrayList<OrderLine>orderLineArrayList;
@@ -29,7 +27,7 @@ class ClientTest {
     public void setUp() throws Exception {
         clientArrayList=new ArrayList<>();
         orderArrayList=new ArrayList<>();
-//        geoPositionArrayList=new ArrayList<>();
+
         addressArrayList=new ArrayList<>();
         deliveryGuyArrayList=new ArrayList<>();
         itemArrayList=new ArrayList<>();

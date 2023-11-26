@@ -51,7 +51,7 @@ public class Address {
 
 
     //----------------------relation(one to one unidirectionnelle (compostion)  ) Address with GeoPosition--------------------
-private  GeoPosition rGeoPosition;
+//private  GeoPosition rGeoPosition;
     public Address(int id,String street, String city, String postalCode, String country,double latitude,double longitude) {
         this.id=id;
         this.street = street;
