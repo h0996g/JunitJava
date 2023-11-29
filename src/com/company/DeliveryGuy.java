@@ -11,17 +11,30 @@ public class DeliveryGuy {
     protected String firstName;
     protected String lastName;
     protected String email;
+    protected String password;
+    protected String phoneNumber;
+    protected Status status;
+
+    public DeliveryGuy(int id,String firstName, String lastName, String email, String password, String phoneNumber, Status status) {
+        this.id=id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.status = status;
+        rOrder = new HashSet<Order>();
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
-    }
-    protected String password;
-    protected String phoneNumber;
-    protected Status status;
-    public String getFirstName() {
-        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -68,16 +81,7 @@ public class DeliveryGuy {
         this.status = status;
     }
     
-    public DeliveryGuy(int id,String firstName, String lastName, String email, String password, String phoneNumber, Status status) {
-      this.id=id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.status = status;
-        rOrder = new HashSet<Order>();
-    }
+
     //-----------------------relation(one to many ) DeliveryGuy with Order-------------------------------
     private Set<Order> rOrder;
     public DeliveryGuy(){ rOrder = new HashSet<Order>();}

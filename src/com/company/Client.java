@@ -14,6 +14,8 @@ public class Client {
     protected String password;
     protected String phoneNumber;
     protected String profilePhotoPath;
+    private Set<Order> rOrder;
+
 
 
     public Client(int id ,String firstName, String lastName, String email, String password, String phoneNumber, String profilePhotoPath) {
@@ -85,7 +87,6 @@ public class Client {
 
 
     //relation(one to many ) Client with Order
-    private Set<Order> rOrder;
     public Client(){
         rOrder=new HashSet<>();
     }
