@@ -70,7 +70,27 @@ public class Address {
 //    }
 //    public GeoPosition getGeoPosition() { return rGeoPosition; }
 //    public void setGeoPosition(GeoPosition geoPosition) { if (geoPosition != null) this.rGeoPosition = geoPosition; }
+public String toString() {
+    return "Address{" +
+            "id=" + id +
+            ", street='" + street + '\'' +
+            ", city='" + city + '\'' +
+            ", postal_code='" + postalCode + '\'' +
+            ", country='" + country + '\'' +
+            ", lattitude=" + latitude +
+            ", longitude=" + longitude +
+            '}';
+}
 
+    public String getWilayaCode() {
+        String wilayaCode ;
+        if (postalCode != null && postalCode.length() >= 2) {
+            wilayaCode = postalCode.substring(0, 2);
+        } else {
+            wilayaCode = "Invalid";
+        }
+        return wilayaCode;
+    }
 
 
 }

@@ -154,6 +154,21 @@ public void updatePassword (String oldPassword ,String newPassword) {
        }
 
    }
+    public void createOrder(Order order){
+        getOrder().add(order);
+    }
+    public void confirmOrder(Order order){
+        order.setStatus(Order.Status.confirmed);
+    }
+    public void review (Order order, String review){
+        order.setReview(review);
+    }
+    public void updateClient( String firstname, String lastname, String email, String password, String phone_number, String profil_photo_path) {
+        if(!(firstname.isEmpty()&&lastname.isEmpty()&&email.isEmpty()&&phone_number.isEmpty()&&profil_photo_path.isEmpty())){
+            setFirstName(firstname);
+            setLastName(lastname);setEmail(email);setPassword(password);setPhoneNumber(phone_number);setProfilePhotoPath(profil_photo_path);
+        }else{System.out.println("Emptyyy");}}
+
 
 
 

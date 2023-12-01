@@ -177,4 +177,14 @@ public class Order {
     public Address getAddressSrc() { return rAddressSrc; }
     public void setAddressSrc(Address address) { if (address != null) this.rAddressSrc = address; }
 
+
+
+    public double getTotalPrice(){
+        double totalprice = 0;
+        for(OrderLine orderLine:rOrderLine){
+            totalprice = totalprice + orderLine.getItem().getPrice();
+        }
+        return totalprice;
+    }
+
 }

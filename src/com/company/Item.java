@@ -53,7 +53,11 @@ public class Item {
         this.price = price;
     }
 
-
+    public void updateItem( String name, String description, int price){
+        if(!(name.isEmpty()&&description.isEmpty())){
+            setId(id);setName(name);setDescription(description);setPrice(price);
+        }else{System.out.println("Emptyyy");}
+    }
 
 
 
