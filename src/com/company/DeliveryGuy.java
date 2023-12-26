@@ -80,7 +80,11 @@ public class DeliveryGuy {
     public void setStatus(Status status) {
         this.status = status;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f
 
     //-----------------------relation(one to many ) DeliveryGuy with Order-------------------------------
     private Set<Order> rOrder;
@@ -108,15 +112,15 @@ public class DeliveryGuy {
             }
         }
     }
-    public void updateAgent(String firstName,String lastName,String email,String phoneNumber,String ipAddress,Status status){
-
-        if(!(firstName.isEmpty()&&lastName.isEmpty()&&email.isEmpty()&&phoneNumber.isEmpty()&&ipAddress.isEmpty())){
-            this.firstName=firstName;
-            this.lastName=lastName;
-            this.email=email;
-            this.phoneNumber=phoneNumber;
-            this.status=status;
-        }
+    public void updateDeliveryGuy(String firstname, String lastname, String email, String password, String phone_number, Status status) {
+        if(!(firstname.isEmpty()&&lastname.isEmpty()&&email.isEmpty()&&phone_number.isEmpty())){
+            setFirstName(firstname);
+            setLastName(lastname);setEmail(email);setPassword(password);setPhoneNumber(phone_number);setStatus(status);
+        }else{System.out.println("Emptyyy");}}
+    public void confirmDelivery(Order order){
+        order.setStatus(order.status);
     }
-
+    public Set<Order> getMyOrders(){
+        return getOrder();
+    }
 }

@@ -7,6 +7,7 @@ public class OrderLine {
     private Order rOrder;
     private Item rItem;
 
+<<<<<<< HEAD
     public Item getrItem() {
         return rItem;
     }
@@ -22,6 +23,9 @@ public class OrderLine {
     public void setrOrder(Order rOrder) {
         this.rOrder = rOrder;
     }
+=======
+
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f
 
     public OrderLine(int quantity, String photoFilePath) {
         this.quantity = quantity;
@@ -44,6 +48,7 @@ public class OrderLine {
         this.photoFilePath = photoFilePath;
     }
 
+<<<<<<< HEAD
 
 
 
@@ -66,3 +71,55 @@ public class OrderLine {
 
 
 }
+=======
+
+
+//    ---------relation(one to many ) Order with OrderLine--------
+//
+//    public void addOrder(Order order){
+//        if(!order.getOrderLine().contains(this)){
+//            if(getOrder() != null)
+//            {
+//                removeOrder();
+//            }
+//            setOrder(order);
+//            order.addOrderLine(this);
+//        }
+//    }
+//    public void removeOrder(){ getOrder().removeOrderLine(this); setOrder(null); }
+//    public Order getOrder(){ return rOrder; }
+//    public void setOrder(Order order){ this.rOrder = order; }
+
+//    -----------------------------------------------------------------
+//    ---------relation(one to many ) Item with OrderLine--------
+
+    public Item getItem() {return rItem;}
+    public void setItem(Item item) {
+        this.rItem = item;
+    }
+    public void addItem(Item item) {
+        this.setItem(item);
+    }
+    public void removeItem(Item item) {
+        this.setItem(null);
+    }
+
+
+
+
+//    public void addItem(Item item){
+////        if(!item.getOrderLine().contains(this)){
+////            if(getItem() != null) removeItem();
+//            setItem(item);
+////            item.addOrderLine(this);
+////        }
+//    }
+//    public void removeItem(){ getItem().removeOrderLine(this); setItem(null); }
+//    public Item getItem(){ return rItem; }
+//    public void setItem(Item item){ this.rItem = item; }
+
+
+
+
+}
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f

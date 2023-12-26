@@ -53,8 +53,15 @@ public class Item {
         this.price = price;
     }
 
+<<<<<<< HEAD
     public int getItemId() {
         return 0;
+=======
+    public void updateItem( String name, String description, int price){
+        if(!(name.isEmpty()&&description.isEmpty())){
+            setId(id);setName(name);setDescription(description);setPrice(price);
+        }else{System.out.println("Emptyyy");}
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f
     }
 
 
@@ -76,4 +83,8 @@ public class Item {
 //    public Set<OrderLine> getOrderLine(){ return rOrderLine; }
 //    public void setOrderLine(Set<OrderLine> orderLines){ this.rOrderLine = orderLines; }
 //
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f

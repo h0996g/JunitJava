@@ -182,4 +182,18 @@ public class Order {
     public Address getAddressSrc() { return rAddressSrc; }
     public void setAddressSrc(Address address) { if (address != null) this.rAddressSrc = address; }
 
+<<<<<<< HEAD
 }
+=======
+
+
+    public double getTotalPrice(){
+        double totalprice = 0;
+        for(OrderLine orderLine:rOrderLine){
+            totalprice = totalprice + orderLine.getItem().getPrice();
+        }
+        return totalprice;
+    }
+
+}
+>>>>>>> 8a08c941cf180e4dae1bc64ff68d53d052a1420f

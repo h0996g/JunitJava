@@ -102,5 +102,21 @@ public class Agent {
         }
     }
 
+    public void createClient(int id, String firstname, String lastname, String email, String password, String phone_number, String profil_photo_path) {
+        Client client = new Client(id, firstname, lastname, email, password, phone_number, profil_photo_path);
+    }
+    public void createDeliveryGuy(int id, String firstname, String lastname, String email, String password, String phone_number, String status) {
+        Client client = new Client(id, firstname, lastname, email, password, phone_number, status);
+    }
+
+    public void createItem(int id, String name, String description, int price) {
+        Item item = new Item(id, name, description, price);
+    }
+    public void updateAgent( String firstname, String lastname, String email, String password, String phone_number, String ipAddress) {
+        if(!(firstname.isEmpty()&&lastname.isEmpty()&&email.isEmpty()&&phone_number.isEmpty()&&ipAddress.isEmpty())){
+            setFirstName(firstname);setLastName(lastname);setEmail(email);setPassword(password);setPhoneNumber(phone_number);setIpAddress(ipAddress);
+        }else{System.out.println("Emptyyy");}
+    }
+
 
 }
