@@ -1,100 +1,104 @@
 package com.company;
 
 public class Agent {
-    protected int id;
-    protected String firstName;
-    protected String lastName;
-    protected String email;
-    protected String password;
-    protected String phoneNumber;
-    protected String ipAddress;
+    protected int AGENT_ID;
+    protected String FIRST_NAME;
+    protected String LAST_NAME;
+    protected String EMAIL;
+    protected String PASSWORD;
+    protected String PHONE_NUMBER;
+    protected String IPADDRESS;
 
 
 
 
 
-    public Agent(int id,String firstName, String lastName, String email, String password, String phoneNumber, String ipAddress) {
-       this.id=id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.ipAddress = ipAddress;
+    public Agent(int AGENT_ID, String FIRST_NAME, String LAST_NAME, String EMAIL, String PASSWORD, String PHONE_NUMBER, String IPADDRESS) {
+        this.AGENT_ID = AGENT_ID;
+        this.FIRST_NAME = FIRST_NAME;
+        this.LAST_NAME = LAST_NAME;
+        this.EMAIL = EMAIL;
+        this.PASSWORD = PASSWORD;
+        this.PHONE_NUMBER = PHONE_NUMBER;
+        this.IPADDRESS = IPADDRESS;
     }
 
-    public int getId() {
-        return id;
+    public Agent() {
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getAGENT_ID() {
+        return AGENT_ID;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setAGENT_ID(int id) {
+        this.AGENT_ID = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getFIRST_NAME() {
+        return FIRST_NAME;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setFIRST_NAME(String firstName) {
+        this.FIRST_NAME = firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getLAST_NAME() {
+        return LAST_NAME;
     }
 
-    public String getEmail() {
-        return email;
+    public void setLAST_NAME(String lastName) {
+        this.LAST_NAME = lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public String getPassword() {
-        return password;
+    public void setEMAIL(String email) {
+        this.EMAIL = email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPASSWORD() {
+        return PASSWORD;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public void setPASSWORD(String password) {
+        this.PASSWORD = password;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public String getPHONE_NUMBER() {
+        return PHONE_NUMBER;
     }
 
-    public String getIpAddress() {
-        return ipAddress;
+    public void setPHONE_NUMBER(String phoneNumber) {
+        this.PHONE_NUMBER = phoneNumber;
     }
 
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
+    public String getIPADDRESS() {
+        return IPADDRESS;
+    }
+
+    public void setIPADDRESS(String ipAddress) {
+        this.IPADDRESS = ipAddress;
     }
 
     // Function
     public void updatePassword (String oldPassword ,String newPassword) {
-        if(this.password == oldPassword) {
+        if(this.PASSWORD == oldPassword) {
             if(newPassword.length()>5) {
-                this.password = newPassword;
+                this.PASSWORD = newPassword;
             }
         }
     }
     public void updateAgent(String firstName,String lastName,String email,String phoneNumber,String ipAddress){
 
         if(!(firstName.isEmpty()&&lastName.isEmpty()&&email.isEmpty()&&phoneNumber.isEmpty()&&ipAddress.isEmpty())){
-            this.firstName=firstName;
-            this.lastName=lastName;
-            this.email=email;
-            this.phoneNumber=phoneNumber;
-            this.ipAddress=ipAddress;
+            this.FIRST_NAME =firstName;
+            this.LAST_NAME =lastName;
+            this.EMAIL =email;
+            this.PHONE_NUMBER =phoneNumber;
+            this.IPADDRESS =ipAddress;
         }
     }
 

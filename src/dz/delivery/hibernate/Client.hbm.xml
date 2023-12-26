@@ -1,0 +1,31 @@
+<hibernate-mapping>
+    <class name="com.company.Client" table="ClIENT">
+        <id name="id" type="integer">
+            <column name="AGENT_ID" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" />
+        </property>
+        <property name="phoneNumber" type="string">
+            <column name="PHONE_NUMBER" />
+        </property>
+        <property name="profilePhotoPath" type="string">
+            <column name="IPADDRESS" />
+        </property>
+        <set name="rOrder" inverse="true" cascade="delete-orphan">
+            <key column="Client_id"/>
+            <one-to-many class="com.company.Order" />
+        </set>
+
+
+    </class>
+</hibernate-mapping>

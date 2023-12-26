@@ -5,13 +5,45 @@ import java.util.Set;
 
 public class Order {
     protected int id;
-    protected   enum Status{Draft,confirmed,delivered;}
+
+    public int getOrderId() {
+        return 0;
+    }
+
+    public enum Status{Draft,confirmed,delivered;}
     protected String review;
     protected int evaluation;
     protected Date createdAt;
     protected Date confirmedAt;
     protected Date deliveredAt;
     protected Status status;
+    private Set<OrderLine> rOrderLine;
+    private Client rClient;
+    private DeliveryGuy rDeliveryGuy;
+    private Address rAddressDes;
+    private Address rAddressSrc;
+
+
+
+
+
+    public Order(int id,String review, int evaluation, Date createdAt, Date confirmedAt, Date deliveredAt, Status status,Address addressDes,Address addressSrc) {
+        this.id=id;
+        this.review = review;
+//        this.evaluation = evaluation;
+        setEvaluation(evaluation);
+        this.createdAt = createdAt;
+        this.confirmedAt = confirmedAt;
+        this.deliveredAt = deliveredAt;
+        this.status = status;
+        rOrderLine = new HashSet<OrderLine>();
+        addAddressDes(addressDes);
+        addAddressSrc(addressSrc);
+
+    }
+
+
+
 
     public int getId() {
         return id;
@@ -21,7 +53,6 @@ public class Order {
         this.id = id;
     }
 
-    private Set<OrderLine> rOrderLine;
 
     public String getReview() {
         return review;
@@ -82,22 +113,8 @@ public class Order {
         this.status = status;
     }
 
-    public Order(int id,String review, int evaluation, Date createdAt, Date confirmedAt, Date deliveredAt, Status status,Address addressDes,Address addressSrc) {
-        this.id=id;
-        this.review = review;
-//        this.evaluation = evaluation;
-        setEvaluation(evaluation);
-        this.createdAt = createdAt;
-        this.confirmedAt = confirmedAt;
-        this.deliveredAt = deliveredAt;
-        this.status = status;
-        rOrderLine = new HashSet<OrderLine>();
-        addAddressDes(addressDes);
-        addAddressSrc(addressSrc);
 
-    }
     //---------relation(one to many ) Client with Order---------------
-    private Client rClient;
     public void addClient(Client client){
         if(!client.getOrder().contains(this)){
             if(getClient()!=null){
@@ -106,17 +123,17 @@ public class Order {
             setClient(client);
             client.addOrder(this);
         }
-}
+    }
     public void removeClient(){
         getClient().removeOrder(this);
         setClient(null);
     }
     public Client getClient(){
         return rClient;
-}
+    }
     public void setClient(Client client){
         this.rClient=client;
-}
+    }
 
 
 //-----------------------------------------------------------------
@@ -128,13 +145,15 @@ public class Order {
 
     public void addOrderLine(OrderLine orderLine){
         if( !getOrderLine().contains(orderLine) ){
-            if(orderLine.getOrder() != null) orderLine.removeOrder();
-            orderLine.setOrder(this);
+//            if(orderLine.getOrder() != null) orderLine.removeOrder();
+//            orderLine.setOrder(this);
             getOrderLine().add(orderLine);
         }
     }
     public void removeOrderLine(OrderLine orderLine){
-        if( getOrderLine().contains(orderLine) ) { getOrderLine().remove(orderLine); orderLine.setOrder(null); }
+        if( getOrderLine().contains(orderLine) ) { getOrderLine().remove(orderLine);
+//            orderLine.setOrder(null);
+        }
     }
     public Set<OrderLine> getOrderLine(){ return rOrderLine; }
     public void setOrderLine(Set<OrderLine> orderLines){ this.rOrderLine = orderLines; }
@@ -142,7 +161,6 @@ public class Order {
 //------------------------------------------------------------------------------
 
     //-----------------------relation(one to many ) DeliveryGuy with Order-------------------------------
-    private DeliveryGuy rDeliveryGuy;
     public void addDeliveryGuy(DeliveryGuy deliveryGuy){
         if(!deliveryGuy.getOrder().contains(this)){
             if(getDeliveryGuy() != null) removeDeliveryGuy();
@@ -155,13 +173,11 @@ public class Order {
     public void setDeliveryGuy(DeliveryGuy deliveryGuy){ this.rDeliveryGuy = deliveryGuy; }
 
     //----------------------relation(one to one unidirectionnelle (compostion)  ) Order with Address Des--------------------
-    private Address rAddressDes;
     public void addAddressDes(Address address) { setAddressDes(address); }
     public Address getAddressDes() { return rAddressDes; }
     public void setAddressDes(Address address) { if (address != null) this.rAddressDes = address; }
 
     //----------------------relation(one to one unidirectionnelle (compostion)  ) Order with Address  Src--------------------
-    private Address rAddressSrc;
     public void addAddressSrc(Address address) { setAddressSrc(address); }
     public Address getAddressSrc() { return rAddressSrc; }
     public void setAddressSrc(Address address) { if (address != null) this.rAddressSrc = address; }

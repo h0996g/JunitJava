@@ -14,6 +14,15 @@ public class Client {
     protected String password;
     protected String phoneNumber;
     protected String profilePhotoPath;
+    private Set<Order> rOrder;
+
+    public Set<Order> getrOrder() {
+        return rOrder;
+    }
+
+    public void setrOrder(Set<Order> rOrder) {
+        this.rOrder = rOrder;
+    }
 
 
     public Client(int id ,String firstName, String lastName, String email, String password, String phoneNumber, String profilePhotoPath) {
@@ -85,7 +94,6 @@ public class Client {
 
 
     //relation(one to many ) Client with Order
-    private Set<Order> rOrder;
     public Client(){
         rOrder=new HashSet<>();
     }
@@ -112,15 +120,15 @@ public class Client {
         this.rOrder=order;
     }
 
-//    ----------------------------Function
-public void updatePassword (String oldPassword ,String newPassword) {
-    if(this.password == oldPassword) {
-        if(newPassword.length()>5) {
-            this.password = newPassword;
+    //    ----------------------------Function
+    public void updatePassword (String oldPassword ,String newPassword) {
+        if(this.password == oldPassword) {
+            if(newPassword.length()>5) {
+                this.password = newPassword;
+            }
         }
     }
-}
-//    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+    //    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
 //            "[a-zA-Z0-9_+&*-]+)*@" +
 //            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
 //            "A-Z]{2,7}$";
@@ -129,30 +137,30 @@ public void updatePassword (String oldPassword ,String newPassword) {
 //           return;
 //        }
         if(!(firstName.isEmpty()&&lastName.isEmpty()&&email.isEmpty()&&phoneNumber.isEmpty()&&profilePhotoPath.isEmpty())){
-                        this.firstName=firstName;
-                        this.lastName=lastName;
-                        this.email=email;
-                        this.phoneNumber=phoneNumber;
-                        this.profilePhotoPath=profilePhotoPath;
+            this.firstName=firstName;
+            this.lastName=lastName;
+            this.email=email;
+            this.phoneNumber=phoneNumber;
+            this.profilePhotoPath=profilePhotoPath;
         }
-}
+    }
 
-   public boolean validateEmail(String email ){
+    public boolean validateEmail(String email ){
         if(email==null || email.isEmpty()){
             return false;
         }
-       String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
-               "[a-zA-Z0-9_+&*-]+)*@" +
-               "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-               "A-Z]{2,7}$";
-       Pattern pattern=Pattern.compile(emailRegex);
-       if(pattern.matcher(email).matches()){
-           return true;
-       }else {
-           return false;
-       }
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+        Pattern pattern=Pattern.compile(emailRegex);
+        if(pattern.matcher(email).matches()){
+            return true;
+        }else {
+            return false;
+        }
 
-   }
+    }
 
 
 

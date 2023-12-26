@@ -1,0 +1,27 @@
+<hibernate-mapping>
+    <class name="com.company.Agenttest" table="AGENTTEST">
+        <id name="AGENT_ID" type="integer">
+            <column name="AGENT_ID" />
+        </id>
+        <property name="FIRST_NAME" type="string">
+            <column name="FIRST_NAME" />
+        </property>
+        <property name="LAST_NAME" type="string">
+            <column name="LAST_NAME" />
+        </property>
+        <property name="EMAIL" type="string">
+            <column name="EMAIL" />
+        </property>
+        <property name="PASSWORD" type="string">
+            <column name="PASSWORD" />
+        </property>
+        <property name="PHONE_NUMBER" type="string">
+            <column name="PHONE_NUMBER" />
+        </property>
+        <property name="IPADDRESS" type="string">
+            <column name="IPADDRESS" />
+        </property>
+
+
+    </class>
+</hibernate-mapping>

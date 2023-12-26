@@ -9,6 +9,33 @@ public class Address {
     protected double longitude;
     protected double latitude;
 
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Address(int id, String street, String city, String postalCode, String country, double latitude, double longitude) {
+        this.id=id;
+        this.street = street;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.latitude=latitude;
+        this.longitude=longitude;
+
+    }
+
     public int getId() {
         return id;
     }
@@ -49,25 +76,6 @@ public class Address {
         this.country = country;
     }
 
-
-    //----------------------relation(one to one unidirectionnelle (compostion)  ) Address with GeoPosition--------------------
-private  GeoPosition rGeoPosition;
-    public Address(int id,String street, String city, String postalCode, String country,double latitude,double longitude) {
-        this.id=id;
-        this.street = street;
-        this.city = city;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.latitude=latitude;
-        this.longitude=longitude;
-//        addGeoPosition(geoPosition);
-    }
-
-//    public void addGeoPosition(GeoPosition geoPosition) { setGeoPosition(geoPosition);
-//
-//    }
-//    public GeoPosition getGeoPosition() { return rGeoPosition; }
-//    public void setGeoPosition(GeoPosition geoPosition) { if (geoPosition != null) this.rGeoPosition = geoPosition; }
 
 
 

@@ -13,7 +13,6 @@ class ClientTest {
     Client c1, c2, c3, c4;
     Address a1Des, a2Des, a3Des, a4Des, a5Des;
     Address a1Src, a2Src, a3Src, a4Src, a5Src;
-//    GeoPosition p1,p2,p3,p4;
     Order o1 , o2 , o3 , o4,o5  ;
     OrderLine ol1,ol2,ol3,ol4,ol5;
     DeliveryGuy d1,d2,d3,d4,d5;
@@ -21,7 +20,6 @@ class ClientTest {
     ArrayList<Client> clientArrayList;
     ArrayList<DeliveryGuy> deliveryGuyArrayList;
     ArrayList<Order> orderArrayList;
-    ArrayList<GeoPosition> geoPositionArrayList;
     ArrayList<Address>addressArrayList;
     ArrayList<Item>itemArrayList;
     ArrayList<OrderLine>orderLineArrayList;
@@ -29,7 +27,7 @@ class ClientTest {
     public void setUp() throws Exception {
         clientArrayList=new ArrayList<>();
         orderArrayList=new ArrayList<>();
-//        geoPositionArrayList=new ArrayList<>();
+
         addressArrayList=new ArrayList<>();
         deliveryGuyArrayList=new ArrayList<>();
         itemArrayList=new ArrayList<>();
@@ -109,7 +107,7 @@ class ClientTest {
 
         //add Item
 
-            i1=new Item(1,"item1","description1",111);
+        i1=new Item(1,"item1","description1",111);
         i2=new Item(2,"item2","description2",222);
         i3=new Item(3,"item3","description3",333);
         i4=new Item(4,"item4","description4",444);
@@ -134,29 +132,29 @@ class ClientTest {
         orderLineArrayList.add(ol5);
         //add client(Order)
 
-            c1.addOrder(o1);
-            c1.addOrder(o5);
-            c2.addOrder(o2);
-            c3.addOrder(o3);
-            c4.addOrder(o4);
-            o1.addClient(c1);
-            o2.addClient(c2);
-            o3.addClient(c3);
-            o4.addClient(c4);
-            o5.addClient(c1);
+        c1.addOrder(o1);
+        c1.addOrder(o5);
+        c2.addOrder(o2);
+        c3.addOrder(o3);
+        c4.addOrder(o4);
+        o1.addClient(c1);
+        o2.addClient(c2);
+        o3.addClient(c3);
+        o4.addClient(c4);
+        o5.addClient(c1);
 
 //add DeliveryGuy(Order)
 
-            d1.addOrder(o1);
-            d1.addOrder(o5);
-            d2.addOrder(o2);
-            d3.addOrder(o3);
-            d4.addOrder(o4);
-            o1.addDeliveryGuy(d1);
-            o2.addDeliveryGuy(d2);
-            o3.addDeliveryGuy(d3);
-            o4.addDeliveryGuy(d4);
-            o5.addDeliveryGuy(d1);
+        d1.addOrder(o1);
+        d1.addOrder(o5);
+        d2.addOrder(o2);
+        d3.addOrder(o3);
+        d4.addOrder(o4);
+        o1.addDeliveryGuy(d1);
+        o2.addDeliveryGuy(d2);
+        o3.addDeliveryGuy(d3);
+        o4.addDeliveryGuy(d4);
+        o5.addDeliveryGuy(d1);
 
         //add OrderLine(item)
 
