@@ -3,7 +3,7 @@
 
 <hibernate-mapping >
 
-    <class name="com.company.Client" table="client">
+    <class name="com.company.DeliveryGuy" table="delivery_guy">
 
         <id name="id" type="int">
             <column name="id"/>
@@ -29,13 +29,13 @@
             <column name="phone_number"/>
         </property>
 
-        <property name="profilePhotoPath">
-            <column name="profile_photo_path"/>
+        <property name="status">
+            <column name="status"/>
         </property>
 
-        <set name="rOrder" inverse="true" lazy="true" cascade="delete-orphan">
+        <set name="rOrder" inverse="true" lazy="true" cascade="save-update , refresh" >
             <key>
-                <column name="id_client" not-null="true"/>
+                <column name="id_delivery_guy" not-null="true"/>
             </key>
             <one-to-many class="com.company.Order"/>
         </set>
@@ -43,5 +43,3 @@
     </class>
 
 </hibernate-mapping>
-
-

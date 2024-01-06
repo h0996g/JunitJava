@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >
+
+    <class name="com.company.Item" table="item">
+
+        <id name="id" type="int">
+            <column name="id"/>
+        </id>
+
+        <property name="name">
+            <column name="name"/>
+        </property>
+
+        <property name="description" type="text">
+            <column name="description"/>
+        </property>
+
+        <property name="price" type="double">
+            <column name="price"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

@@ -16,9 +16,8 @@ public class Main {
                 new Configuration().configure("dz/delivery/hibernate/hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
-        Agenttest b = new Agenttest(6,"hosugssesm", "fedxine","h0d9g96g@gmail.com","1234456","06561g834133","e127.g0.0.1");
+        Client b = new Client(1,"houssem","eddine","m0955g@gmail.com","123456","120435","2304325235");
         session.persist(b);
-
         tx.commit();
 //        Query q = session.createQuery("select * from ");
 //                List<A> result = (List<A>) q.list();

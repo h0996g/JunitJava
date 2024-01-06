@@ -6,7 +6,7 @@
             oracle.jdbc.driver.OracleDriver</property>
         <property name="hibernate.connection.url">
             jdbc:oracle:thin:@localhost:1521:XE </property>
-        <property name="hibernate.connection.username">delivery</property>
+        <property name="hibernate.connection.username">hiber</property>
         <property name="hibernate.connection.password">12</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="current_session_context_class"> thread </property>
@@ -17,7 +17,22 @@
 
         <property name="hibernate.format_sql"> true </property>
         <mapping resource="dz/delivery/hibernate/Agent.hbm.xml"></mapping>
-        <mapping resource="dz/delivery/hibernate/Agenttest.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/Client.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/DeliveryGuy.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/Order.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/OrderLine.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/Item.hbm.xml"></mapping>
+        <mapping resource="dz/delivery/hibernate/Address.hbm.xml"></mapping>
+
+
+
+        <!--        <mapping resource="dz/delivery/hibernate/OrderLine.hbm.xml"></mapping>-->
+
+
+
+
+
+
 
     </session-factory>
 </hibernate-configuration>

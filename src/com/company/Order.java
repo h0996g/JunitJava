@@ -1,6 +1,7 @@
 package com.company;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Order {
@@ -17,14 +18,72 @@ public class Order {
     protected Date confirmedAt;
     protected Date deliveredAt;
     protected Status status;
-    private Set<OrderLine> rOrderLine;
+Set<OrderLine>rOrderLine;
+
+    public Set<OrderLine> getrOrderLine() {
+        return rOrderLine;
+    }
+
+
+//
+//    public Set<OrderLine> getrOrderLine() {
+//        return rOrderLine;
+//    }
+
+    public void setrOrderLine(Set<OrderLine> rOrderLine) {
+        this.rOrderLine = rOrderLine;
+    }
+
     private Client rClient;
+
+    public Client getrClient() {
+        return rClient;
+    }
+
+    public void setrClient(Client rClient) {
+        this.rClient = rClient;
+    }
+
     private DeliveryGuy rDeliveryGuy;
+
+    public DeliveryGuy getrDeliveryGuy() {
+        return rDeliveryGuy;
+    }
+
+
+//    public DeliveryGuy getrDeliveryGuy() {
+//        return rDeliveryGuy;
+//    }
+
+    public void setrDeliveryGuy(DeliveryGuy rDeliveryGuy) {
+        this.rDeliveryGuy = rDeliveryGuy;
+    }
+
+
+//    public DeliveryGuy getrDeliveryGuy() {
+//        return rDeliveryGuy;
+//    }
+
+
     private Address rAddressDes;
+
+    public Address getrAddressDes() {
+        return rAddressDes;
+    }
+
+    public void setrAddressDes(Address rAddressDes) {
+        this.rAddressDes = rAddressDes;
+    }
+
     private Address rAddressSrc;
 
+    public Address getrAddressSrc() {
+        return rAddressSrc;
+    }
 
-
+    public void setrAddressSrc(Address rAddressSrc) {
+        this.rAddressSrc = rAddressSrc;
+    }
 
 
     public Order(int id,String review, int evaluation, Date createdAt, Date confirmedAt, Date deliveredAt, Status status,Address addressDes,Address addressSrc) {

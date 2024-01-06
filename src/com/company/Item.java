@@ -19,6 +19,11 @@ public class Item {
         this.price = price;
         rOrderLine = new HashSet<OrderLine>();
     }
+
+    public Item() {
+
+    }
+
     public int getId() {
         return id;
     }

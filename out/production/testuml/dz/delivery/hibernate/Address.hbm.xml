@@ -1,0 +1,37 @@
+
+
+<hibernate-mapping >
+
+    <class name="com.company.Address" table="address">
+
+        <id name="id" type="int">
+            <column name="id"/>
+        </id>
+
+        <property name="street">
+            <column name="street"/>
+        </property>
+
+        <property name="city">
+            <column name="city"/>
+        </property>
+
+        <property name="country">
+            <column name="country"/>
+        </property>
+
+        <property name="postalCode">
+            <column name="postalCode"/>
+        </property>
+
+        <property name="longitude" type="double">
+            <column name="longitude"/>
+        </property>
+
+        <property name="latitude" type="double">
+            <column name="latitude"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

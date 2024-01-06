@@ -84,10 +84,22 @@ public class DeliveryGuy {
 
     //-----------------------relation(one to many ) DeliveryGuy with Order-------------------------------
     private Set<Order> rOrder;
-    public DeliveryGuy(){ rOrder = new HashSet<Order>();}
+
+    public Set<Order> getrOrder() {
+        return rOrder;
+    }
+
+    public void setrOrder(Set<Order> rOrder) {
+        this.rOrder = rOrder;
+    }
+
+    public DeliveryGuy(){ rOrder = new HashSet<>();}
     public void addOrder(Order order){
-        if( !getOrder().contains(order) ){
-            if(order.getDeliveryGuy() != null) order.removeDeliveryGuy();
+        if( !getOrder().contains(order) ) {
+            if (order.getDeliveryGuy() != null)
+            {
+                order.removeDeliveryGuy();
+            }
             order.setDeliveryGuy(this);
             getOrder().add(order);
         }

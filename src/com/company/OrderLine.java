@@ -1,11 +1,24 @@
 package com.company;
 
 public class OrderLine {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    protected int id;
 
     protected int quantity;
     protected String photoFilePath;
     private Order rOrder;
     private Item rItem;
+
+    public OrderLine() {
+
+    }
 
     public Item getrItem() {
         return rItem;
@@ -24,6 +37,8 @@ public class OrderLine {
     }
 
     public OrderLine(int quantity, String photoFilePath) {
+        this.id = id;
+
         this.quantity = quantity;
         this.photoFilePath = photoFilePath;
     }

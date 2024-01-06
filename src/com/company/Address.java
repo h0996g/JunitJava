@@ -9,6 +9,10 @@ public class Address {
     protected double longitude;
     protected double latitude;
 
+    public Address() {
+
+    }
+
     public double getLongitude() {
         return longitude;
     }

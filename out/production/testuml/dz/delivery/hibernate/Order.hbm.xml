@@ -1,0 +1,49 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >
+
+    <class name="com.company.Order" table="commande">
+
+        <id name="id" type="integer">
+            <column name="id"/>
+        </id>
+
+        <property name="status">
+            <column name="status"/>
+        </property>
+
+        <property name="createdAt" type="timestamp">
+            <column name="created_at"/>
+        </property>
+
+        <property name="confirmedAt" type="timestamp">
+            <column name="confirmed_at"/>
+        </property>
+
+        <property name="deliveredAt" type="timestamp">
+            <column name="delivered_at"/>
+        </property>
+
+        <property name="review" type="text">
+            <column name="review"/>
+        </property>
+
+        <property name="evaluation" type="integer">
+            <column name="evaluation"/>
+        </property>
+
+        <many-to-one name="rClient" column="id_client" not-null="true" />
+        <many-to-one name="rDeliveryGuy" column="id_delivery_guy" not-null="true" />
+
+        <set name="rOrderLine" cascade="delete-orphan">
+            <key column="id_commande"/>
+            <one-to-many class="com.company.OrderLine" />
+        </set>
+
+        <many-to-one name="rAddressSrc" column="id_address_src" unique="true" not-null="true" cascade="all" />
+        <many-to-one name="rAddressDes" column="id_address_dest" unique="true" not-null="true" cascade="all" />
+
+    </class>
+
+</hibernate-mapping>
